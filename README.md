@@ -1,6 +1,6 @@
 # BackEnd-Notes
 
-### PHP
+## PHP
 
 - [连接数据库](https://github.com/xia0bs/BackEnd-Notes/blob/master/PHP/mysql.md)
 
