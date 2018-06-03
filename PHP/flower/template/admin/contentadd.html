@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+</head>
+<body>
+<form action="contentadd.php" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="exampleInputEmail0">所属栏目</label>
+        <select name="pid" id="exampleInputEmail0" class="form-control">
+            <option value="0">一级栏目</option>
+            <?php
+               echo $str;
+            ?>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">标题</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="新闻标题" name="ctitle">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">描述</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="新闻描述" name="cdescription">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword2">作者</label>
+        <input type="text" class="form-control" id="exampleInputPassword2" placeholder="作者" name="author">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword3">缩略图</label>
+        <input type="file" class="form-control" id="exampleInputPassword3" name="thumb">
+        <!--<input type="text" class="form-control" id="exampleInputPassword3" placeholder="缩略图" name="thumb">-->
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword4">点击量</label>
+        <input type="text" class="form-control" id="exampleInputPassword4" name="hits">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword5">内容</label>
+        <input type="file" class="form-control" id="exampleInputPassword5" name="content[]" multiple>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+</body>
+</html>

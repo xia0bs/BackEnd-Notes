@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="../static/css/suxindongtai.css">
+<!--导航结束-->
+<!--第一部分开始-->
+    <h1><?php echo $title;?></h1>
+<!--第一部分结束-->
+<!--第二部分开始-->
+    <section>
+        <div class="left">
+            <ul>
+                <?php for($i=0;$i<count($data);$i++){?>
+                <li>
+                    <!-- 栏目id  文章id -->
+                    <a href="show.php?id=<?php echo $cid;?>&cid=<?php echo $data[$i]['cid']?>" class="medialeft">
+                        <img src="<?php echo $data[$i]['thumb']?>" alt="">
+                    </a>
+                    <div class="mediaright">
+                        <a href="show.php?cid=<?php echo $data[$i]['cid']?>" class="title"><?php echo $data[$i]['ctitle']?></a>
+                        <p> 张三<?php echo $data[$i]['cdescription']?></p>
+                        <span>
+                        <div class="sleft"><?php echo substr($data[$i]['ctime'],0,10)?>&nbsp;<?php echo $data[$i]['author']?></div>
+                        <i class="iconfont icon-chakan"></i>
+                        <div class="sright"><?php echo $data[$i]['hits']?></div>
+                    </span>
+                    </div>
+                </li>
+               <?php }?>
+            </ul>
+        </div>
+        <div class="right">
+            <input type="text" placeholder="Search">
+            <a href="" class="search">
+                <i class="iconfont icon-sousuo"></i>
+            </a>
+            <h3>为你推荐</h3>
+            <a href="" class="tit">所有文章</a>
+        </div>
+    </section>
+<!--第二部分结束-->

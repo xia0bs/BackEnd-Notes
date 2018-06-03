@@ -1,0 +1,45 @@
+<!--导航结束-->
+<link rel="stylesheet" href="../static/css/Bfamily.css">
+<!--第一部分开始-->
+<section>
+    <div class="left">
+        <div class="top">
+            <h3><?php echo $data['ctitle']?></h3>
+            <div class="tip">
+                <div class="sleft"><?php echo $data['ctime']?>&nbsp;<?php echo $data['author']?></div>
+                <i class="iconfont icon-chakan"></i>
+                <div class="sright"><?php echo $data['hits']?></div>
+            </div>
+        </div>
+        <p>
+            <?php
+              echo $data['cdescription'];
+            ?>
+
+        </p>
+        <?php
+          $arr = explode(",",$data['content']);
+          for($i=0;$i<count($arr);$i++){
+         ?>
+           <img src="<?php echo $arr[$i]; ?>" alt="">
+        <?php } ?>
+        <div class="bottom">
+            <a href="" class="zuo">上一篇：绿萝的养护</a>
+            <a class="you">下一篇：那些配材花的点睛之笔</a>
+        </div>
+    </div>
+    <div class="right">
+        <input type="text" placeholder="Search">
+        <a href="" class="search">
+            <i class="iconfont icon-sousuo"></i>
+        </a>
+        <h3>为你推荐</h3>
+        <div class="san">
+            <a href="Bfamily.html" class="one">适合家庭的摆花台</a>
+            <a href="Bsummer.html" class="one">夏日里的一抹清凉</a>
+            <a href="" class="one">亲临进口花材</a>
+        </div>
+        <a href="flowever%20%20language.html" class="tit">所有文章</a>
+    </div>
+</section>
+<!--第一部分结束-->

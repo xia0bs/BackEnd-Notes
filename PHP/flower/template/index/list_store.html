@@ -1,0 +1,42 @@
+<style>
+    .nav{
+        background: #ffffff!important;
+    }
+    .nav .navbar ul li a{
+        color: #000000;!important;
+    }
+</style>
+<link rel="stylesheet" href="../static/css/suxin%20store.css">
+<!--导航结束-->
+
+<!--第一部分开始-->
+    <h1>素馨商城</h1>
+<!--第一部分结束-->
+<!--第二部分开始-->
+    <div class="search">
+        <input type="text" placeholder="亲，搜索一下喽！">
+        <a href="">
+            <i class="iconfont icon-sousuo"></i>
+        </a>
+    </div>
+<!--第二部分结束-->
+<!--第三部分开始-->
+    <div class="picture">
+        <?php
+        for($i=0;$i<count($data);$i++){
+        ?>
+
+        <a href="show_store.php?id=<?php echo $cid;?>&cid=<?php echo $data[$i]['cid'];?>">
+            <img src="<?php echo $data[$i]['thumb'];?>" alt="">
+        </a>
+
+        <?php } ?>
+
+        <div class="bottom">
+            <a href="" class="first aa">上一页</a>
+            <a href="" class="second bb">1</a>
+            <a href="" class="second cc">2</a>
+            <a href="" class="first dd">下一页</a>
+        </div>
+    </div>
+<!--第三部分结束-->

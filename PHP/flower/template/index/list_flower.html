@@ -1,0 +1,20 @@
+<!--导航结束-->
+<style>
+    .nav{
+        background: #ffffff!important;
+    }
+    .nav .navbar ul li a{
+        color: #000000;!important;
+    }
+</style>
+    <link rel="stylesheet" href="../static/css/suxin%20flower.css">
+<!--第一部分开始-->
+    <div class="picture">
+        <?php for($i=0;$i<count($data);$i++){?>
+        <a href="">
+
+            <img src="<?php echo $data[$i]['thumb'];?>" alt="">
+        </a>
+       <?php }?>
+    </div>
+<!--第一部分结束-->

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>郑州素馨花卉有限公司</title>
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_628526_kqphtdsyblzq6w29.css">
+
+</head>
+<body>
+<!--导航开始-->
+<div class="nav">
+    <div class="navbar">
+        <a href="" class="logo">
+            <img src="../static/img/titleq.png" alt="">
+        </a>
+        <ul>
+            <li class="<?php if(!isset($_GET['id'])){ echo 'hot';}?>">
+                <a href="index.php" >网站首页</a>
+            </li>
+<!-- cid  -->
+            <?php
+              for($i=0;$i<count($data);$i++){
+            ?>
+                <li class="<?php if(isset($_GET['id'])){echo $_GET['id']==$data[$i]['id']?'hot':'';} ?>">
+                    <a href="list.php?id=<?php echo $data[$i]['id'];?>"><?php echo $data[$i]['cname'];?> </a>
+                </li>
+            <?php
+              }
+            ?>
+
+
+        </ul>
+    </div>
+</div>
+<!--导航结束-->

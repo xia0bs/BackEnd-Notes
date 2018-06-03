@@ -1,0 +1,87 @@
+
+<!--导航结束-->
+<link rel="stylesheet" href="../static/css/Blunbo.css">
+<link rel="stylesheet" href="../static/css/swiper.min.css">
+<style>
+    .bottom .swiper-slide-active{
+        border: 2px solid #16b0dc;
+    }
+</style>
+<script src="../static/js/swiper.min.js"></script>
+
+<!--第一部分开始-->
+    <div class="title">
+        <a href="index.html" class="one">
+            <i class="iconfont icon-shouye1"></i> 商城首页
+        </a>
+        <a href="suxin%20store.html" class="two">/&nbsp;素馨商城</a>
+    </div>
+<!--第一部分结束-->
+<!--第二部分开始-->
+    <div class="sectionone">
+        <div class="left">
+            <div class="swiper-container top">
+                <div class="swiper-wrapper">
+                    <?php
+          $arr = explode(",",$data['content']);
+          for($i=0;$i<count($arr);$i++){
+         ?>
+                    <div class="swiper-slide" style="background:url(<?php echo $arr[$i];?>) center/cover"></div>
+                  <?php }?>
+                </div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next swiper-button-white"></div>
+                <div class="swiper-button-prev swiper-button-white"></div>
+            </div>
+            <div class="swiper-container bottom">
+                <div class="swiper-wrapper">
+                    <?php
+          $arr = explode(",",$data['content']);
+          for($i=0;$i<count($arr);$i++){
+         ?>
+                    <div class="swiper-slide" style="background:url(<?php echo $arr[$i];?>) center/cover"></div>
+                    <?php }?>
+                </div>
+            </div>
+
+        </div>
+        <script>
+            var galleryTop = new Swiper('.top', {
+                spaceBetween: 10,
+                loop:true,
+                loopedSlides: 5, //looped slides should be the same
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+            var galleryThumbs = new Swiper('.bottom', {
+                spaceBetween: 10,
+                slidesPerView: 4,
+                touchRatio: 0.2,
+                loop: true,
+                loopedSlides: 5, //looped slides should be the same
+                slideToClickedSlide: true,
+            });
+            galleryTop.controller.control = galleryThumbs;
+            galleryThumbs.controller.control = galleryTop;
+
+        </script>
+
+        <div class="right">
+            <h1><?php echo $data['ctitle']?></h1>
+            <p><?php echo $data['cdescription']?></p>
+        </div>
+    </div>
+<!--第二部分结束-->
+<!--第三部分开始-->
+    <div class="sectiontwo">
+        <div class="left">
+            <div class="aa">详细信息</div>
+            <div class="bb">
+                <img src="<?php echo $arr[0];?>" alt="">
+            </div>
+        </div>
+        <div class="right">热门推荐</div>
+    </div>
+<!--第三部分结束-->
